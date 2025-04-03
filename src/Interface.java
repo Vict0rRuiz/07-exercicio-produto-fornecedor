@@ -42,12 +42,21 @@ public class Interface {
                         researchProduct();
                         break;
                     case 3:
-                        researchSupplier();
+                        research();
                         break;
                 }
             }
         }
 
+    }
+
+    private void research() {
+        Supplier supplier = researchSupplier();
+        if (supplier != null) {
+            String aux = "Supplier : " + supplier.getName() + "\n";
+            aux+= "CPNJ: " + supplier.getCnpj();
+            showMessageDialog(null, aux);
+        }
     }
 
     private void registerProduct() {
